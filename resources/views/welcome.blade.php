@@ -25,5 +25,9 @@
     <body class="antialiased">
         @livewireScripts
         <livewire:counter />
+        <div>
+            <livewire:show-posts :titulo="$titulo"/>
+            <!-- {{$titulo}} -->
+        </div>
     </body>
 </html>
