@@ -23,11 +23,11 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        @livewireScripts
-        <livewire:counter />
+        
+        <!-- <livewire:counter /> -->
         <div>
             <livewire:show-posts :titulo="$titulo"/>
-            <!-- {{$titulo}} -->
         </div>
+        @livewireScripts
     </body>
 </html>

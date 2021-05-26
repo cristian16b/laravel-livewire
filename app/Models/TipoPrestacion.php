@@ -44,6 +44,8 @@ class TipoPrestacion extends Model
 		'TPR_ESTADO'
 	];
 
+	protected $primaryKey = 'TPR_ID';
+
 	public function prestacions()
 	{
 		return $this->hasMany(Prestacion::class, 'TPR_ID');
