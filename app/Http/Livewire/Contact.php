@@ -26,7 +26,7 @@ class Contact extends Component
             'name' => 'required|min:5',
             'email' => 'required|email:rfc,dns'
         ]);
-        Contactos::create([
+        Contacto::create([
             'name' => $this->name,
             'email' => $this->email
         ]);
@@ -34,7 +34,7 @@ class Contact extends Component
     }
     public function edit($id)
     {
-        $record = Contactos::findOrFail($id);
+        $record = Contacto::findOrFail($id);
         $this->selected_id = $id;
         $this->name = $record->name;
         $this->email = $record->email;
@@ -48,7 +48,7 @@ class Contact extends Component
             'email' => 'required|email:rfc,dns'
         ]);
         if ($this->selected_id) {
-            $record = Contactos::find($this->selected_id);
+            $record = Contacto::find($this->selected_id);
             $record->update([
                 'name' => $this->name,
                 'email' => $this->email
@@ -60,7 +60,7 @@ class Contact extends Component
     public function destroy($id)
     {
         if ($id) {
-            $record = Contactos::where('id', $id);
+            $record = Contacto::where('id', $id);
             $record->delete();
         }
     }
