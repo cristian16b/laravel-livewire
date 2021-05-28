@@ -28,6 +28,7 @@
         <!-- <div>
             <livewire:show-posts :titulo="$titulo"/>
         </div> -->
+        <livewire:contact />
         @livewireScripts
     </body>
 </html>

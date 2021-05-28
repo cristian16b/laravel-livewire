@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Contact as Contacto;
 
 class Contact extends Component
 {
@@ -11,7 +12,7 @@ class Contact extends Component
 
    public function render()
     {
-        $this->data = Contactos::all();
+        $this->data = Contacto::all();
         return view('livewire.contact');
     }
     private function resetInput()
