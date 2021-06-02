@@ -7,7 +7,7 @@ use App\Models\Contact as Contacto;
 
 class Contact extends Component
 {
-    public $data, $name, $email, $selected_id;
+    public $data, $nombre, $email, $selected_id;
     public $updateMode = false;
 
    public function render()
@@ -17,17 +17,17 @@ class Contact extends Component
     }
     private function resetInput()
     {
-        $this->name = null;
+        $this->nombre = null;
         $this->email = null;
     }
     public function store()
     {
         $this->validate([
-            'name' => 'required|min:5',
+            'nombre' => 'required|min:5',
             'email' => 'required|email:rfc,dns'
         ]);
         Contacto::create([
-            'name' => $this->name,
+            'nombre' => $this->nombre,
             'email' => $this->email
         ]);
         $this->resetInput();
@@ -36,7 +36,7 @@ class Contact extends Component
     {
         $record = Contacto::findOrFail($id);
         $this->selected_id = $id;
-        $this->name = $record->name;
+        $this->nombre = $record->nombre;
         $this->email = $record->email;
         $this->updateMode = true;
     }
@@ -44,13 +44,13 @@ class Contact extends Component
     {
         $this->validate([
             'selected_id' => 'required|numeric',
-            'name' => 'required|min:5',
+            'nombre' => 'required|min:5',
             'email' => 'required|email:rfc,dns'
         ]);
         if ($this->selected_id) {
             $record = Contacto::find($this->selected_id);
             $record->update([
-                'name' => $this->name,
+                'nombre' => $this->nombre,
                 'email' => $this->email
             ]);
             $this->resetInput();
