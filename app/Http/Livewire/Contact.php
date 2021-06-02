@@ -10,6 +10,13 @@ class Contact extends Component
     public $data, $nombre, $email, $selected_id;
     public $updateMode = false;
 
+    // https://benborgers.com/livewire-validation-messages
+    protected $messages = [
+        'nombre.min' => 'El nombre es demasiado corto.',
+        'email.required' => 'Debe ingresar su correo electronico.',
+        'email.email' => 'El formato del correo ingresado no es valido.',
+    ];
+
    public function render()
     {
         $this->data = Contacto::all();
