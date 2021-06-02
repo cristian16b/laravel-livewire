@@ -1,4 +1,11 @@
 <div class="w-full">
+    <div class="flex flex-wrap justify-between items-center mb-6">
+        <div class="w-auto pr-3">
+            @if($errors->any())
+                <span class="text-red-500 text-xs italic">Se encontraron errores en el formulario</span>
+            @endif
+        </div>
+    </div>
     <div class="flex flex-wrap justify-between items-center mb-16">
         <div class="w-auto pr-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">Nombre</label>
