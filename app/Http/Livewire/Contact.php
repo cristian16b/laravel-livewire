@@ -31,6 +31,7 @@ class Contact extends Component
             'email' => $this->email
         ]);
         $this->resetInput();
+        session()->flash('message', 'Contacto agregado.');
     }
     public function edit($id)
     {

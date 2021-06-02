@@ -4,6 +4,11 @@
             @if($errors->any())
                 <span class="text-red-500 text-xs italic">Se encontraron errores en el formulario</span>
             @endif
+            @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
         </div>
     </div>
     <div class="flex flex-wrap justify-between items-center mb-16">
