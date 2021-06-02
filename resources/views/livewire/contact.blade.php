@@ -18,7 +18,7 @@
             @forelse ($data as $item)
                 <tr class="text-center">
                     <td class="border px-4 py-2">{{ $item->id }}</td>
-                    <td class="border px-4 py-2">{{ $item->name }}</td>
+                    <td class="border px-4 py-2">{{ $item->nombre }}</td>
                     <td class="border px-4 py-2">{{ $item->email }}</td>
                     <td class="border px-4 py-2">
                         <button wire:click="edit({{ $item->id }})" class="px-2 py-1 bg-blue-200 text-blue-500 hover:bg-blue-500 hover:text-white rounded">Editar</button>

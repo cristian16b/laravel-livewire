@@ -3,8 +3,8 @@
         <input type="hidden" wire:model="selected_id">
         <div class="w-auto pr-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">Nombre</label>
-            <input wire:model="name" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white">
-            @error('name')
+            <input wire:model="nombre" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white">
+            @error('nombre')
                 <span class="text-red-500 text-xs italic">{{ $message }}</span>
             @enderror
         </div>

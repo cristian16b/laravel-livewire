@@ -2,8 +2,8 @@
     <div class="flex flex-wrap justify-between items-center mb-16">
         <div class="w-auto pr-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">Nombre</label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="name" wire:model="name" type="text" placeholder="Nombre completo...">
-            @error('name')
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="name" wire:model="nombre" type="text" placeholder="Nombre completo...">
+            @error('nombre')
                 <span class="text-red-500 text-xs italic">{{ $message }}</span>
             @enderror
         </div>
