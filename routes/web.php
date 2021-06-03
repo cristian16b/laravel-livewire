@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome',array('titulo' => "yo soy un titulito"));
-});
 
 Auth::routes();
 
@@ -23,6 +20,15 @@ Auth::routes();
 Route::view('contacts', 'users.contacts');
 
 Route::view('items', 'users.items');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/items', function () {
+    return view('items');
+})->name('items');
