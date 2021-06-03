@@ -23,3 +23,6 @@ Auth::routes();
 Route::view('contacts', 'users.contacts');
 
 Route::view('items', 'users.items');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

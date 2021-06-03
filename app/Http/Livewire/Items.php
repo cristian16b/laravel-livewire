@@ -34,8 +34,7 @@ class Items extends Component
  
     public function render()
     {
-        $items = Item::where('user_id', auth()->user()->id)
-            ->when( $this->q, function($query) {
+        $items = Item::when( $this->q, function($query) {
                 return $query->where(function( $query) {
                     $query->where('name', 'like', '%'.$this->q . '%')
                         ->orWhere('price', 'like', '%' . $this->q . '%');
@@ -47,6 +46,8 @@ class Items extends Component
             ->orderBy( $this->sortBy, $this->sortAsc ? 'ASC' : 'DESC');
 
         $items = $items->paginate(10);
+
+        // dd($items);
         
         return view('livewire.items',
             array(
