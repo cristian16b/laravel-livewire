@@ -22,7 +22,7 @@
     @livewireStyles
 </head>
 <body>
-    @livewireScripts
+
     <!-- <livewire:counter /> -->
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -83,5 +83,6 @@
             @yield('content')
         </main>
     </div>
+    @livewireScripts
 </body>
 </html>
